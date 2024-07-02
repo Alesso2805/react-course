@@ -1,11 +1,17 @@
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
+    const age = 10;
+    const isGreen = false;
   return (
-      <div className="App">
-        <Job salary={90000} position="Senior SDE" company="Amazon"/>
-        <Job salary={12000} position="Junior SDE" company="Google"/>
-        <Job salary={10000} position="Project Manager" company="Netflix"/>
+      <div className={styles.App}>
+          {age >= 18 ? <h1>OVER AGE</h1> : <h1>UNDER AGE</h1>}
+          <h1 style={{color: isGreen ? "green" : "red"}}>THIS HAS COLOR</h1>
+
+          {isGreen && <button> THIS IS A BUTTON</button>}
+        {/*<Job salary={90000} position="Senior SDE" company="Amazon"/>*/}
+        {/*<Job salary={12000} position="Junior SDE" company="Google"/>*/}
+        {/*<Job salary={10000} position="Project Manager" company="Netflix"/>*/}
       </div>
 );
 }
